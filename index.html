@@ -1139,11 +1139,11 @@
       setLoading(true);
 
       const templateParams = {
-        from_email: emailEl.value.trim(),
-        subject:    subjectEl.value.trim(),
-        message:    msgEl.value.trim(),
-        to_email:   'saad7aeed@gmail.com',
-      };
+  email:   emailEl.value.trim(),    // ✅ Matches {{email}}
+  title:   subjectEl.value.trim(),  // ✅ Matches {{title}}
+  message: msgEl.value.trim(),      // ✅ Matches {{message}}
+  name:    "Portfolio Visitor",     // ✅ Add this for {{name}}
+};
 
       try {
         await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
